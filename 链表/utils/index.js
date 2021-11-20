@@ -3,7 +3,7 @@ const arrayToLinkedList = arr => {
   let linkedList = {}
 
   const deep = (data = {}) => {
-    if (index < arr.length) {
+    if (index < arr.length - 1) {
       data.val = arr[index]
       data.next = {}
       data.next.val = arr[index + 1]
@@ -11,6 +11,7 @@ const arrayToLinkedList = arr => {
 
       return deep(data.next)
     }
+    data.next = null
   }
   deep(linkedList)
 

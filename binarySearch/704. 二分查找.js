@@ -55,8 +55,6 @@ function firstSearch (nums, target) {
   return -1
 }
 
-console.log(firstSearch([8, 8, 8, 9, 9, 9, 10, 11], 8))
-
 function lastSearch (nums, target) {
   let low = 0
   let high = nums.length - 1
@@ -81,4 +79,5 @@ function lastSearch (nums, target) {
   return -1
 }
 
-console.log(lastSearch([8, 8, 8, 9, 9, 9, 10, 11], 8))
+// console.log(lastSearch([8, 8, 8, 9, 9, 9, 10, 11], 8))
+
