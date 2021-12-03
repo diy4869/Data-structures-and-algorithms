@@ -1,4 +1,5 @@
 const { arrayToLinkedList } = require('./utils')
+const LinkedList =  require('./index')
 
 /**
  * Definition for singly-linked list.
@@ -14,6 +15,8 @@ const { arrayToLinkedList } = require('./utils')
  */
 var mergeTwoLists = function (l1, l2) {
   if (l1 === null && l2 === null) return null
+  if (l1 === null) return l2
+  if (l2 === null) return l1
 
   let current1 = l1.next
   let current2 = l2.next
