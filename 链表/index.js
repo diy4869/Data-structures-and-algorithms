@@ -22,7 +22,7 @@ class LinkedList {
       }
     }
   }
-  
+
   remove (val) {
     let prev = null
     let current = this
@@ -50,10 +50,21 @@ class LinkedList {
       }
     }
   }
-  
+
+  update (val, newVal) {
+    let current = this
+
+    while (current) {
+      if (current.val === val) {
+        current.val = newVal
+      }
+      current = current.next
+    }
+  }
+
   get (val) {
     let current = this
-    
+
     while (current) {
       if (current.val === val) {
         return current
@@ -66,7 +77,7 @@ class LinkedList {
 
   has (val) {
     let current = this
-    
+
     while (current) {
       if (current.val === val) {
         return true
@@ -77,51 +88,53 @@ class LinkedList {
     return false
   }
 
-  update (val, newVal) {
+  insertBefore (head, val) {
     let current = this
-    
+    let prev = null
+
+    if (current.val === head.val) {
+      const temp = current
+      prev = new LinkedList(val)
+      
+      
+      // this.val = prev.val
+      // this.next = prev.next
+
+      current = prev.next.next
+
+      return prev
+    }
+
     while (current) {
-      if (current.val === val) {
-        current.val = newVal
+      if (current.val === head.val) {
+        const next = prev.next
+
+        prev.next = new LinkedList(val)
+        current = prev.next
+        current.next = next
+      } else {
+        prev = current
+        current = current.next
+      }
+    }
+  }
+
+  insertAfter (head, val) {
+    let current = this
+
+    while (current) {
+      if (current.val === head.val) {
+        let temp = current.next
+
+        current.next = new LinkedList(val)
+        current.next.next = temp
+
+        return
       }
       current = current.next
     }
   }
 
-  insertBefore (head, val) {
-    let current = this
-    let prev = null
-
-    while (current) {
-      if (current.val === head.val) {
-        if (!prev) {
-          const temp = current
-          prev = new LinkedList(val)
-          
-          prev.next = temp
-          
-          current = prev.next.next
-          // this.val = prev.val
-          // this.next = prev.next
-
-          // current = current.next
-          // console.log(this, prev, current)
-        } else {
-          const next = prev.next
-          prev.next = new LinkedList(val)
-          current = prev.next
-          current.next = next
-        }
-
-      } else {
-        prev = current
-        current = current.next
-      }
-
-
-    }
-  }
-  
   reverse () {
     let prev = null // 上一个
     let current = this // 当前的
@@ -143,7 +156,15 @@ linkedList.add(2)
 linkedList.add(4)
 linkedList.add(5)
 
-// linkedList.insert(linkedList.get(1), 3)
-// console.log(linkedList)
-linkedList.insert(linkedList.get(5), 8)
+linkedList.insertBefore(linkedList.get(1), 3)
 console.log(linkedList)
+linkedList.insertBefore(linkedList.get(5), 8)
+console.log(linkedList)
+// 3 1 2 4 8 5
+
+// linkedList.insertAfter(linkedList.get(1), 3)
+// console.log(linkedList)
+// linkedList.insertAfter(linkedList.get(5), 8)
+// linkedList.insertAfter(linkedList.get(5), 9)
+// console.log(linkedList)
+// 1 3 2 4 5 8
