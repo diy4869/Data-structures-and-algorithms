@@ -1,6 +1,10 @@
 const arrayToLinkedList = arr => {
   let index = 0
   let linkedList = {}
+  if (arr.length === 1) return linkedList = {
+    val: arr[0],
+    next: null
+  }
 
   const deep = (data = {}) => {
     if (index < arr.length - 1) {
