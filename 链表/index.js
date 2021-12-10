@@ -95,8 +95,7 @@ class LinkedList {
     if (current.val === head.val) {
       const temp = current
       prev = new LinkedList(val)
-      
-      
+
       // this.val = prev.val
       // this.next = prev.next
 
@@ -156,10 +155,10 @@ linkedList.add(2)
 linkedList.add(4)
 linkedList.add(5)
 
-linkedList.insertBefore(linkedList.get(1), 3)
-console.log(linkedList)
-linkedList.insertBefore(linkedList.get(5), 8)
-console.log(linkedList)
+// linkedList.insertBefore(linkedList.get(1), 3)
+// console.log(linkedList)
+// linkedList.insertBefore(linkedList.get(5), 8)
+// console.log(linkedList)
 // 3 1 2 4 8 5
 
 // linkedList.insertAfter(linkedList.get(1), 3)
@@ -168,3 +167,5 @@ console.log(linkedList)
 // linkedList.insertAfter(linkedList.get(5), 9)
 // console.log(linkedList)
 // 1 3 2 4 5 8
+
+module.exports = LinkedList
