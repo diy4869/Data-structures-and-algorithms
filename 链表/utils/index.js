@@ -1,25 +1,13 @@
+const ListNode = require('../index')
+
 const arrayToLinkedList = arr => {
-  let index = 0
-  let linkedList = {}
-  if (arr.length === 1) return linkedList = {
-    val: arr[0],
-    next: null
+  let tail = new ListNode(-1)
+
+  for (let i = 0; i < arr.length; i++) {
+    tail.add(arr[i])
   }
 
-  const deep = (data = {}) => {
-    if (index < arr.length - 1) {
-      data.val = arr[index]
-      data.next = {}
-      data.next.val = arr[index + 1]
-      index++
-
-      return deep(data.next)
-    }
-    data.next = null
-  }
-  deep(linkedList)
-
-  return linkedList
+  return tail.next
 }
 
 const flatLinkedList = linkedList => {
@@ -37,6 +25,8 @@ const flatLinkedList = linkedList => {
 
   return arr
 }
+
+arrayToLinkedList([1, 2, 3])
 
 module.exports.arrayToLinkedList = arrayToLinkedList
 module.exports.flatLinkedList = flatLinkedList
