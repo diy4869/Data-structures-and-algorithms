@@ -1,52 +1,38 @@
 const Node = require('../index')
 
 function arrayToBinaryTree (arr) {
-  const first = arr.shift()
-  const treeNode = new Node(first)
+  if (!arr.length) return null
 
+  let index = 0
+  const queue = []
+  const len = arr.length
+  const head = new Node(arr[index])
+  queue.push(head)
 
-  const travense = (node) => {
-    if (arr.length === 0) return
-    
-    node.left = new Node(arr.shift())
-    node.right = new Node(arr.shift())
-
-    travense(node.left)
-    travense(node.right)
-    // return node
-  }
-
-  travense(treeNode)
-
-
-
-  // }
-  console.log(treeNode)
-  return treeNode
-}
-
-arrayToBinaryTree([1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-const tree = {
-  val: 1,
-  left: {
-    val: 2,
-    left: {
-      val: 4,
-      left: null,
-      right: null
-    },
-    right: {
-      val: 5,
-      left: null,
-      right: null
+  while (index < len) {
+    index++
+    const parent = queue.shift()
+    if (arr[index] !== null && arr[index] !== undefined) {
+      const node = new Node(arr[index])
+      parent.left = node
+      queue.push(node)
     }
-  },
-  right: {
-    val: 3,
-    left: null,
-    right: null
+
+    index++
+
+    if (arr[index] !== null && arr[index] !== undefined) {
+      const node = new Node(arr[index])
+      parent.right = node
+      queue.push(node)
+    }
   }
+
+  return head
+  
 }
 
-module.exports = arrayToBinaryTree
+
+
+
+
+module.exports.arrayToBinaryTree = arrayToBinaryTree
