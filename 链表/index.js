@@ -3,9 +3,9 @@
  */
 
 class ListNode {
-  constructor (val) {
+  constructor (val, next = null) {
     this.val = val
-    this.next = null
+    this.next = next
   }
 
   add (val) {
@@ -149,23 +149,23 @@ class ListNode {
     return prev
   }
 }
-const linkedList = new ListNode(1)
+// const linkedList = new ListNode(1)
 
-linkedList.add(2)
-linkedList.add(4)
-linkedList.add(5)
+// linkedList.add(2)
+// linkedList.add(4)
+// linkedList.add(5)
 
-// linkedList.insertBefore(linkedList.get(1), 3)
-// console.log(linkedList)
-// linkedList.insertBefore(linkedList.get(5), 8)
-// console.log(linkedList)
-// 3 1 2 4 8 5
+// // linkedList.insertBefore(linkedList.get(1), 3)
+// // console.log(linkedList)
+// // linkedList.insertBefore(linkedList.get(5), 8)
+// // console.log(linkedList)
+// // 3 1 2 4 8 5
 
-// linkedList.insertAfter(linkedList.get(1), 3)
-// console.log(linkedList)
-// linkedList.insertAfter(linkedList.get(5), 8)
-// linkedList.insertAfter(linkedList.get(5), 9)
-// console.log(linkedList)
-// 1 3 2 4 5 8
+// // linkedList.insertAfter(linkedList.get(1), 3)
+// // console.log(linkedList)
+// // linkedList.insertAfter(linkedList.get(5), 8)
+// // linkedList.insertAfter(linkedList.get(5), 9)
+// // console.log(linkedList)
+// // 1 3 2 4 5 8
 
-module.exports = LinkedList
+module.exports = ListNode
