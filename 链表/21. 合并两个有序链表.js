@@ -1,5 +1,5 @@
 const { arrayToLinkedList } = require('./utils')
-const LinkedList =  require('./index')
+const ListNode = require('./index')
 
 /**
  * Definition for singly-linked list.
@@ -18,24 +18,29 @@ var mergeTwoLists = function (l1, l2) {
   if (l1 === null) return l2
   if (l2 === null) return l1
 
-  let current1 = l1.next
-  let current2 = l2.next
-  let head = l1 || l2
+  let current1 = l1
+  let current2 = l2
+  let tail = new ListNode(-1)
+  let head = tail
   
-  while (current1 !== null || current2 !== null) {
-
-    if (current1.val === current2.val) {
-      head.next = current1.next
-    } else if (current1.val > current2.val) {
-      head.next = current2.next
-    } else if (current1.val < current2.val) {
-      head.next = current1.next
+  while (current1 || current2) {
+    if (current1 && current2) {
+      if (current1.val === current2.val) {
+        current1.val = current1.val
+      } else if (current1.val > current2.val) {
+        current1.val = current2.val
+      } else if (current1.val < current2.val) {
+        head.next = current1
+      }
     }
+    
+    head = head.next
     current1 = current1.next
     current2 = current2.next
 
   }
-  return head
+
+  return tail.next
 }
 
 

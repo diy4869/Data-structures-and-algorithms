@@ -27,7 +27,6 @@ var addTwoNumbers = function(l1, l2) {
             } else {
                 current1.val = sum
             }
-            
         } else if (current2) {
             const sum = current2.val + add
             if (sum >= 10) {
@@ -36,12 +35,11 @@ var addTwoNumbers = function(l1, l2) {
             } else {
                 current1.val = sum
             }
-           
         }
 
-        
-        current1 = current1.next ? current1.next : null
-        current2 = current2.next ? current2.next : null
+        head.next = head.next
+        current1 = current1 ? current1.next : null
+        current2 = current2 ? current2.next : null 
     }
 };
 

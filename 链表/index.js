@@ -2,7 +2,7 @@
  * @description 单向链表
  */
 
-class LinkedList {
+class ListNode {
   constructor (val) {
     this.val = val
     this.next = null
@@ -18,7 +18,7 @@ class LinkedList {
 
       // 如果 prev.next 为 null，说明到了最后一个，就把 prev.next 指向一个新的链表
       if (prev.next === null) {
-        prev.next = new LinkedList(val)
+        prev.next = new ListNode(val)
       }
     }
   }
@@ -94,7 +94,7 @@ class LinkedList {
 
     if (current.val === head.val) {
       const temp = current
-      prev = new LinkedList(val)
+      prev = new ListNode(val)
       
       
       // this.val = prev.val
@@ -109,7 +109,7 @@ class LinkedList {
       if (current.val === head.val) {
         const next = prev.next
 
-        prev.next = new LinkedList(val)
+        prev.next = new ListNode(val)
         current = prev.next
         current.next = next
       } else {
@@ -126,7 +126,7 @@ class LinkedList {
       if (current.val === head.val) {
         let temp = current.next
 
-        current.next = new LinkedList(val)
+        current.next = new ListNode(val)
         current.next.next = temp
 
         return
@@ -150,21 +150,23 @@ class LinkedList {
     return prev
   }
 }
-const linkedList = new LinkedList(1)
+// const linkedList = new ListNode(1)
 
-linkedList.add(2)
-linkedList.add(4)
-linkedList.add(5)
+// linkedList.add(2)
+// linkedList.add(4)
+// linkedList.add(5)
 
-linkedList.insertBefore(linkedList.get(1), 3)
-console.log(linkedList)
-linkedList.insertBefore(linkedList.get(5), 8)
-console.log(linkedList)
+// linkedList.insertBefore(linkedList.get(1), 3)
+// console.log(linkedList)
+// linkedList.insertBefore(linkedList.get(5), 8)
+// console.log(linkedList)
 // 3 1 2 4 8 5
 
 // linkedList.insertAfter(linkedList.get(1), 3)
 // console.log(linkedList)
 // linkedList.insertAfter(linkedList.get(5), 8)
 // linkedList.insertAfter(linkedList.get(5), 9)
-// console.log(linkedList)
+// console.log(ListNode)
 // 1 3 2 4 5 8
+
+module.exports = ListNode
