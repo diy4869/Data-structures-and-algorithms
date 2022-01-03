@@ -1,6 +1,6 @@
 
 
-class TreeNode {
+class Node {
   constructor(val, left, right) {
     this.val = val ? val : 0
     this.left = left ? left: null
@@ -8,5 +8,6 @@ class TreeNode {
   }
 }
 
-module.exports = TreeNode
+
+module.exports = Node
 
