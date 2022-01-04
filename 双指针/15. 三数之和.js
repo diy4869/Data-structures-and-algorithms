@@ -45,6 +45,7 @@ var threeSum = function(nums) {
         while (l < r && nums[r] === nums[r - 1]) {
           r--
         }
+        
         // 当前的已经遍历过，需要 l++ r--
         l++
         r--
