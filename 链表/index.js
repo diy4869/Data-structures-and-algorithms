@@ -95,7 +95,6 @@ class ListNode {
     if (current.val === head.val) {
       const temp = current
       prev = new ListNode(val)
-
       // this.val = prev.val
       // this.next = prev.next
 
