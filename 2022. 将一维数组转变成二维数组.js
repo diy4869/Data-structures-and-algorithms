@@ -10,7 +10,13 @@ var construct2DArray = function (original, m, n) {
       arr[m - 1].push(original[i])
     }
 
-    m--
+    m--/**
+    * @param {number[]} nums
+    * @return {number[][]}
+    */
+   var subsets = function(nums) {
+   
+   };
   }
 
   return arr
