@@ -15,5 +15,5 @@ function fib (n) {
   // return fib(n - 1) + fib(n - 2)
 }
 console.time()
-console.log(fib(442324242))
+console.log(fib(20))
 console.timeEnd()
