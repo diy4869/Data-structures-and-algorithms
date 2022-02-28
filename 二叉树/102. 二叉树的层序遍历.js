@@ -3,28 +3,28 @@
  * @param {*} root 
  * @description 解法一 DFS 深度优先，每次递归通过 level 确定当前层级，从而给数组对应层级添加 node
  */
-// var levelOrder = function (root) {
-//   if (root === null) return []
-//   let result = []
+var levelOrder = function (root) {
+  if (root === null) return []
+  let result = []
 
-//   const dfs = (node, level = 0) => {
-//     if (node === null) return
+  const dfs = (node, level = 0) => {
+    if (node === null) return
 
-//     result[level] = !result[level] ? [] : result[level]
-//     result[level].push(node.val)
+    result[level] = !result[level] ? [] : result[level]
+    result[level].push(node.val)
 
-//     if (node.left) {
-//       dfs(node.left, level + 1)
-//     }
-//     if (node.right) {
-//       dfs(node.right, level + 1)
-//     }
-//   }
+    if (node.left) {
+      dfs(node.left, level + 1)
+    }
+    if (node.right) {
+      dfs(node.right, level + 1)
+    }
+  }
 
-//   dfs(root)
+  dfs(root)
 
-//   return result
-// }
+  return result
+}
 
 /**
  * 

@@ -30,7 +30,8 @@ var permute = function(nums) {
   backtrace([])
   console.timeEnd()
 
-  console.log(result.length)
+  console.log(result)
 };
 
-permute(new Array(5).fill(undefined).map((_, index) => index))
+// permute(new Array(5).fill(undefined).map((_, index) => index))
+permute(new Array(10).fill(undefined).map((_, index) => index))

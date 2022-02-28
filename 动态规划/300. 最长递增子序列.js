@@ -20,8 +20,6 @@ const findInsertIndex = (nums, target) => {
     }
   }
   
-  // console.log([...nums.slice(0, low), target, ...nums.slice(low)])
-  
   return low
 }
 
@@ -34,7 +32,6 @@ var lengthOfLIS = function (nums) {
 
   for (let i = 0; i < nums.length; i++) {
     const index = findInsertIndex(list, nums[i])
-    // console.log(index)
     if (index > list.length) {
       list.push(nums[i])
     } else {
@@ -42,7 +39,6 @@ var lengthOfLIS = function (nums) {
     }
   }
 
-  console.log(list)
   return list.length
 };
 
