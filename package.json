@@ -1,0 +1,24 @@
+{
+  "name": "Data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diy4869/Data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diy4869/Data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/diy4869/Data-structures-and-algorithms#readme",
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.6.0-dev.20220106"
+  }
+}
