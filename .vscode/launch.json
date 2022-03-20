@@ -4,14 +4,27 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
+    // {
+    //   "type": "node",
+    //   "request": "launch",
+    //   "name": "js debug",
+    //   "skipFiles": [
+    //     "<node_internals>/**/*.js"
+    //   ],
+    //   "program": "${workspaceFolder}\\${file}"
+    // },
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**/*.js"
+      "name": "ts debug",
+      "runtimeArgs": [
+          "-r",
+          "ts-node/register"
       ],
-      "program": "${workspaceFolder}\\${file}"
-    }
+      "args": [
+          "${file}"
+      ]
+  }
   ]
 }

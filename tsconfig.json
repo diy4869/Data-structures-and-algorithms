@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        "strict": false,
+        "noEmit": false
+    }
+}
