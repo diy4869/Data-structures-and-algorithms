@@ -1,16 +1,28 @@
-function searchInsert (nums, target) {
-  if (target === 0) return 0
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+ var searchInsert = function(nums, target) {
+  let left = 0
+  let right = nums.length - 1
 
-  let low = 0
-  let high = nums.length - 1
+  while (left <= right) {
+      const middle = (left + right) >> 1
 
-  while (low <= high) {
-    const middle = (low + high) >> 1
-    if (nums[middle] === target) {
-      return middle
-    }
-    if (nums[middle] < target) {
-      console.log(nums[middle])
-    }
+      if (nums[middle] < target) {
+          left = middle + 1
+      }
+
+      if (nums[middle] > target) {
+          right = middle - 1
+      }
+      
+      if (nums[middle] === target) {
+          return middle
+      }
   }
-}
+
+  return left
+  
+};
