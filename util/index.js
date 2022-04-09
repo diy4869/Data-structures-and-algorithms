@@ -7,7 +7,6 @@ function callClass (Fn,  method, args) {
   const obj = new Fn(...ClassArgs)
 
   for (let i = 0; i < classMethod.length; i++) {
-    
     obj[classMethod[i]].apply(obj, restArgs[i])
   }
 }
