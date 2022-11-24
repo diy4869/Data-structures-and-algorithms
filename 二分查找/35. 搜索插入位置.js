@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
+ * @description 
  */
  var searchInsert = function(nums, target) {
   let left = 0
