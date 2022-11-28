@@ -1,15 +1,36 @@
+const keyArr = ['key1', 'key2', 'key3', 'key4']; 
+const valArr1 = ['val11', 'val12', 'val13', 'val14'];
+const valArr2 = ['val21', 'val22', 'val23', 'val24'];
+const valArr3 = ['val31', 'val32', 'val33', 'val34'];
 
-class A {
-  constructor() {
+const data = [
+  valArr1,
+  valArr2,
+  valArr3
+]
 
-    console.log(A.#test())
+const arr = [
+  {
+    name1: '金额'
+  },
+  {
+    name1: '扣率'
+  },
+  {
+    name1: '方式'
   }
+]
 
-  #test() {
-    console.log(1)
-  }
-}
+const result = arr.reduce((total, current, currentIndex) => {
 
-const a = new A()
+  return total.concat(
+    keyArr.reduce((obj, children, childrenIndex) => {
+      obj[children] = data[currentIndex][childrenIndex]
 
-console.log(a)
+      return obj
+    }, current)
+  )
+
+}, arr)
+
+console.log(result)

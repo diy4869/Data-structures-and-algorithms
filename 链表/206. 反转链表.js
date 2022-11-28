@@ -16,3 +16,15 @@ var reverseList = function (head) {
 }
 
 reverseList(arrayToLinkedList([1, 2, 3, 4, 5]))
+
+const a = () => { }
+
+a()
+
+module.expoorts.a = a
+expoorts.a = a
+
+
+export const b = () => { }
+
+b()

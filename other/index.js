@@ -59,9 +59,8 @@ const path = (obj) => {
         pathArr.pop()
 
         return result
-
     }
-    console.log(pathObject(obj, initVal))
+
     return pathObject(obj, initVal)
 }
 
@@ -87,6 +86,8 @@ const data = path({
         [3]
     ]
 })
+
+console.log(data)
 
 
 const pathToObject = (initVal, str, val) => {
