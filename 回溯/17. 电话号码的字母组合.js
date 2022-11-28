@@ -2,7 +2,8 @@
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function(digits) {
+var letterCombinations = function (digits) {
+  if (digits.length === 0) return []
   const map = new Map([
     ['2', ['a', 'b', 'c']],
     ['3', ['d', 'e', 'f']],
@@ -15,27 +16,30 @@ var letterCombinations = function(digits) {
   ])
 
   const result = []
-  const stack = []
   const arr = digits.split('')
 
+  const backtrack = (current, index = 0, stack = []) => {
+    if (stack.length === arr.length) {
+      result.push(
+        stack.join('')
+      )
+      return
+    }
+    const list = map.get(current)
 
-
-  for (let i = 0; i < arr.length; i++) {
-    const list = map.get(arr[i])
-    stack.push(list)
-
-    while (stack.length) {
-      const first = stack.shift()
-
-      for (let i = 0; i < first.length; i++) {
-        result.push(first[i])
-      }
+    for (let i = 0; i < list.length; i++) {
+      stack.push(list[i])
+      backtrack(arr[index + 1], index + 1, stack)
+      stack.pop()
     }
   }
-  console.log(result)
-  
-};
 
-letterCombinations('2')
-letterCombinations('23')
-letterCombinations('234')
+  backtrack(arr[0])
+  return result
+}
+
+// letterCombinations('2')
+// letterCombinations('2345')
+console.time()
+letterCombinations('234567859')
+console.timeEnd()
